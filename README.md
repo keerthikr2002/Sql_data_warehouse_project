@@ -48,7 +48,7 @@ data-warehouse-project/
 │   ├── data_flow_diagram.png               # file for the data flow diagram
 │   ├── data_model_diagram.png              # file for data models (star schema)
 │   ├── data_inegration_map.png             # entity relation diagram  
-│   ├── naming-conventions.md               # Consistent naming guidelines for tables, columns, and files
+│   ├── naming_conventions.md               # Consistent naming guidelines for tables, columns, and files
 │
 ├── scripts/                            # SQL scripts for ETL and transformations
 │   ├── bronze/                         # Scripts for extracting and loading raw data
