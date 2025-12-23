@@ -57,7 +57,7 @@ SQL_data_warehouse_project/
 ├── LICENSE
 └── README.md
 ```text
----
+
 
 ## 🚀 Setup and Installation
 
