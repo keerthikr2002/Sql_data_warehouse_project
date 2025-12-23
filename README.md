@@ -31,7 +31,7 @@ This repository contains a full end-to-end SQL Data Warehouse implementation fol
 
 
 
-```text
+```
 SQL_data_warehouse_project/
 ├── source_crm/                 # Raw CRM Data (CSV files)
 │   ├── cust_info.csv
@@ -56,7 +56,7 @@ SQL_data_warehouse_project/
 │   └── quality_checks_gold.sql
 ├── LICENSE
 └── README.md
-text```
+```
 
 
 ## 🚀 Setup and Installation
