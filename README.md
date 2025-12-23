@@ -1,7 +1,7 @@
 
 # Sql Data Warehouse 
 
-Welcome to the **Data Warehouse Project** repository! 🚀  .
+Welcome to the **SQL Data Warehouse Project** repository! 🚀  .
 
 ---
 ## 🏗️ Data Architecture
@@ -12,11 +12,6 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-# SQL Data Warehouse Project
-
-This repository contains a full end-to-end SQL Data Warehouse implementation following the Medallion Architecture (Bronze, Silver, Gold). This project was built based on the tutorial by **Data with Baraa**.
-
-**Tutorial Source:** [SQL Data Warehouse Project - Data with Baraa](https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL)
 
 ---
 
