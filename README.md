@@ -30,7 +30,6 @@ This repository contains a full end-to-end SQL Data Warehouse implementation fol
 ## 📂 Project Structure
 
 
-
 ```
 SQL_data_warehouse_project/
 ├── source_crm/                 # Raw CRM Data (CSV files)
