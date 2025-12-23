@@ -12,7 +12,6 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
 # SQL Data Warehouse Project
 
 This repository contains a full end-to-end SQL Data Warehouse implementation following the Medallion Architecture (Bronze, Silver, Gold). This project was built based on the tutorial by **Data with Baraa**.
@@ -21,10 +20,7 @@ This repository contains a full end-to-end SQL Data Warehouse implementation fol
 
 ---
 
-## 📌 Project Overview
-The project focuses on building a structured data warehouse by extracting raw data from multiple source systems, processing it through various stages, and preparing it for final business intelligence reporting.
-
-### Key Objectives:
+## 📌 Key Objectives
 * Architecture: Implementation of Bronze (Raw), Silver (Cleaned), and Gold (Business) layers.
 * Automation: Using stored procedures to automate the loading and transformation processes.
 * Data Quality: Rigorous validation and testing at each stage of the pipeline.
@@ -33,15 +29,15 @@ The project focuses on building a structured data warehouse by extracting raw da
 
 ## 📂 Project Structure
 SQL_data_warehouse_project/
-├── source_crm/                 # Raw CRM Data (CSV files)
+├── source_crm/ # Raw CRM Data (CSV files)
 │   ├── cust_info.csv
 │   ├── prd_info.csv
 │   └── sales_details.csv
-├── source_erp/                 # Raw ERP Data (CSV files)
+├── source_erp/ # Raw ERP Data (CSV files)
 │   ├── CUST_AZ12.csv
 │   ├── LOC_A101.csv
 │   └── PX_CAT_G1V2.csv
-├── scripts/                    # SQL Implementation Scripts
+├── scripts/ # SQL Implementation Scripts
 │   ├── bronze/
 │   │   ├── ddl_bronze.sql
 │   │   └── proc_load_bronze.sql
@@ -50,12 +46,13 @@ SQL_data_warehouse_project/
 │   │   └── proc_load_silver.sql
 │   ├── gold/
 │   │   └── ddl_gold.sql
-│   └── init_database.sql       # Database initialization script
-├── tests/                      # Quality Assurance & Validation
+│   └── init_database.sql # Database initialization script
+├── tests/ # Quality Assurance & Validation
 │   ├── quality_checks_silver.sql
 │   └── quality_checks_gold.sql
 ├── LICENSE
 └── README.md
+
 
 ---
 
@@ -71,14 +68,13 @@ SQL_data_warehouse_project/
    Command: Run ddl_silver.sql then EXEC silver.proc_load_silver;
 
 4. Presentation (Gold Layer): Create the final views and tables optimized for reporting.
-   Command: Run ddl_gold.sql
 
 ---
 
 ## 🧪 Validation
 Data quality is verified using scripts in the /tests folder to ensure no duplicates, correct data types, and referential integrity:
-* Silver Checks: Validates data cleaning success and format standardization.
-* Gold Checks: Validates business logic and final analytical aggregations.
+* quality_checks_silver.sql: Validates data cleaning success and format standardization.
+* quality_checks_gold.sql: Validates business logic and final analytical aggregations.
 
 ---
 
