@@ -1,7 +1,7 @@
 
 # Sql Data Warehouse 
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  .
+Welcome to the **Data Warehouse Project** repository! 🚀  .
 
 ---
 ## 🏗️ Data Architecture
@@ -13,50 +13,79 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
+# SQL Data Warehouse Project
+
+This repository contains a full end-to-end SQL Data Warehouse implementation following the Medallion Architecture (Bronze, Silver, Gold). This project was built based on the tutorial by **Data with Baraa**.
+
+**Tutorial Source:** [SQL Data Warehouse Project - Data with Baraa](https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL)
+
 ---
-## 📖 Project Overview
 
-This project involves:
+## 📌 Project Overview
+The project focuses on building a structured data warehouse by extracting raw data from multiple source systems, processing it through various stages, and preparing it for final business intelligence reporting.
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+### Key Objectives:
+* Architecture: Implementation of Bronze (Raw), Silver (Cleaned), and Gold (Business) layers.
+* Automation: Using stored procedures to automate the loading and transformation processes.
+* Data Quality: Rigorous validation and testing at each stage of the pipeline.
 
-### Building the Data Warehouse (Data Engineering)
+---
 
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+## 📂 Project Structure
+SQL_data_warehouse_project/
+├── source_crm/                 # Raw CRM Data (CSV files)
+│   ├── cust_info.csv
+│   ├── prd_info.csv
+│   └── sales_details.csv
+├── source_erp/                 # Raw ERP Data (CSV files)
+│   ├── CUST_AZ12.csv
+│   ├── LOC_A101.csv
+│   └── PX_CAT_G1V2.csv
+├── scripts/                    # SQL Implementation Scripts
+│   ├── bronze/
+│   │   ├── ddl_bronze.sql
+│   │   └── proc_load_bronze.sql
+│   ├── silver/
+│   │   ├── ddl_silver.sql
+│   │   └── proc_load_silver.sql
+│   ├── gold/
+│   │   └── ddl_gold.sql
+│   └── init_database.sql       # Database initialization script
+├── tests/                      # Quality Assurance & Validation
+│   ├── quality_checks_silver.sql
+│   └── quality_checks_gold.sql
+├── LICENSE
+└── README.md
 
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+---
 
-## 📂 Repository Structure
-```
-data-warehouse-project/
-│
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
-│
-├── docs/                                   # Project documentation and architecture details
-│   ├── ETL.png                             # file shows all different techniquies and methods of ETL
-│   ├── data_architecture_diagram.png       #file shows the project's architecture
-│   ├── data_catalog_gold_layer.md          # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow_diagram.png               # file for the data flow diagram
-│   ├── data_model_diagram.png              # file for data models (star schema)
-│   ├── data_inegration_map.png             # entity relation diagram  
-│   ├── naming_conventions.md               # Consistent naming guidelines for tables, columns, and files
-│
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
+## 🚀 Setup and Installation
+
+1. Initialize Database: Execute the script to create the database and setup the bronze, silver, and gold schemas.
+   Command: Run init_database.sql in your SQL environment.
+
+2. Ingestion (Bronze Layer): Create the staging tables and load the raw CSV files using the stored procedure.
+   Command: Run ddl_bronze.sql then EXEC bronze.proc_load_bronze;
+
+3. Transformation (Silver Layer): Clean and transform the raw data into a relational format.
+   Command: Run ddl_silver.sql then EXEC silver.proc_load_silver;
+
+4. Presentation (Gold Layer): Create the final views and tables optimized for reporting.
+   Command: Run ddl_gold.sql
+
+---
+
+## 🧪 Validation
+Data quality is verified using scripts in the /tests folder to ensure no duplicates, correct data types, and referential integrity:
+* Silver Checks: Validates data cleaning success and format standardization.
+* Gold Checks: Validates business logic and final analytical aggregations.
+
+---
+
+## 🤝 Credits
+Special thanks to Baraa for the detailed walkthrough and for sharing these data engineering best practices.
+* YouTube Channel: Data with Baraa (https://www.youtube.com/@DataWithBaraa)
+* Video Link: https://youtu.be/SSKVgrwhzus?si=S_Z996sWs94jZSZL
+
+---
+*Created as part of a Data Engineering Portfolio.*
