@@ -56,7 +56,7 @@ SQL_data_warehouse_project/
 │   └── quality_checks_gold.sql
 ├── LICENSE
 └── README.md
-```text
+text```
 
 
 ## 🚀 Setup and Installation
