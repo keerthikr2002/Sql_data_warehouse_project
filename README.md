@@ -12,7 +12,6 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
 # SQL Data Warehouse Project
 
 This repository contains a full end-to-end SQL Data Warehouse implementation following the Medallion Architecture (Bronze, Silver, Gold). This project was built based on the tutorial by **Data with Baraa**.
@@ -22,9 +21,9 @@ This repository contains a full end-to-end SQL Data Warehouse implementation fol
 ---
 
 ## 📌 Key Objectives
-* **Architecture:** Implementation of Bronze (Raw), Silver (Cleaned), and Gold (Business) layers.
-* **Automation:** Using stored procedures to automate the loading and transformation processes.
-* **Data Quality:** Rigorous validation and testing at each stage of the pipeline.
+* Architecture: Implementation of Bronze (Raw), Silver (Cleaned), and Gold (Business) layers.
+* Automation: Using stored procedures to automate the loading and transformation processes.
+* Data Quality: Rigorous validation and testing at each stage of the pipeline.
 
 ---
 
@@ -32,6 +31,7 @@ This repository contains a full end-to-end SQL Data Warehouse implementation fol
 
 
 
+```text
 SQL_data_warehouse_project/
 ├── source_crm/                 # Raw CRM Data (CSV files)
 │   ├── cust_info.csv
@@ -56,7 +56,7 @@ SQL_data_warehouse_project/
 │   └── quality_checks_gold.sql
 ├── LICENSE
 └── README.md
-
+```text
 ---
 
 ## 🚀 Setup and Installation
